@@ -1,8 +1,7 @@
 import React from 'react'
 
-const CartItem = () => {
-  const product = {}
-  const { id, name, price, quantity, picture } = product
+const CartItem = ({product,handleRemove}) => {
+  const { name, price, quantity, picture } = product
   return (
     <li className='flex flex-col py-6 sm:flex-row sm:justify-between'>
       <div className='flex w-full space-x-2 sm:space-x-4'>
@@ -42,7 +41,7 @@ const CartItem = () => {
                 <rect width='32' height='200' x='312' y='216'></rect>
                 <path d='M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z'></path>
               </svg>
-              <span>Remove</span>
+              <span onClick={()=>handleRemove(product)}>Remove</span>
             </button>
           </div>
         </div>
